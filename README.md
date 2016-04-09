@@ -3,9 +3,9 @@
 RecyclerViewItemDecoration is an Android library that allows developers to easily create RecyclerView with ItemDecoration.
 Besides, the library will have new ItemDecoration added constantly.
 
-![](https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/PinnedHeaderItemDecoration.gif?width=300)
-![](https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/LinearDividerItemDecoration.gif?width=300)
-![](https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/GridOffsetsItemDecoration.gif?width=300)
+![](https://github.com/dinuscxj/RecyclerItemDecoration/blob/master/Preview/PinnedHeaderItemDecoration.gif?width=300)
+![](https://github.com/dinuscxj/RecyclerItemDecoration/blob/master/Preview/LinearDividerItemDecoration.gif?width=300)
+![](https://github.com/dinuscxj/RecyclerItemDecoration/blob/master/Preview/GridOffsetsItemDecoration.gif?width=300)
 
 ## Features
  * Support the ItemView with the specific ViewType sticky on the header of the RecyclerView.
