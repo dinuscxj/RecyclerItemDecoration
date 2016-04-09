@@ -1,5 +1,5 @@
 
-## RecyclerRefreshLayout
+## RecyclerItemDecoration
 RecyclerViewItemDecoration is an Android library that allows developers to easily create RecyclerView with ItemDecoration.
 Besides, the library will have new ItemDecoration added constantly.
 
