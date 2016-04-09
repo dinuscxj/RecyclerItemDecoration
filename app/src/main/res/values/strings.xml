@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">RecyclerItemDecoration</string>
+    <string name="label_linear_divider">LinearDividerActivity</string>
+    <string name="label_grid_divider">GridOffsetsActivity</string>
+    <string name="label_pinned_header">PinnedHeaderActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_animal">animal</string>
+    <string name="title_cartoon">cartoon</string>
+    <string name="title_scenic">scenic</string>
+
+    <string name="animal0">animal0</string>
+    <string name="animal1">animal1</string>
+    <string name="animal2">animal2</string>
+    <string name="cartoon0">cartoon0</string>
+    <string name="cartoon1">cartoon1</string>
+    <string name="cartoon2">cartoon2</string>
+    <string name="scenic0">scenic0</string>
+    <string name="scenic1">scenic1</string>
+    <string name="scenic2">scenic2</string>
+</resources>
