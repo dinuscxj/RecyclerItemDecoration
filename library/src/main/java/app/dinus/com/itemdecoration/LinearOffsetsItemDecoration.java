@@ -14,7 +14,7 @@ import android.view.View;
  * This class can only be used in the RecyclerView which use a LinearLayoutManager or
  * its subclass.
  */
-public class LinearOffsetItemDecoration extends RecyclerView.ItemDecoration{
+public class LinearOffsetsItemDecoration extends RecyclerView.ItemDecoration{
   public static final int LINEAR_OFFSETS_HORIZONTAL = LinearLayoutManager.HORIZONTAL;
   public static final int LINEAR_OFFSETS_VERTICAL = LinearLayoutManager.VERTICAL;
 
@@ -31,7 +31,7 @@ public class LinearOffsetItemDecoration extends RecyclerView.ItemDecoration{
   private int mOrientation;
   private int mItemOffsets;
 
-  public LinearOffsetItemDecoration(@Orientation int orientation) {
+  public LinearOffsetsItemDecoration(@Orientation int orientation) {
     mOrientation = orientation;
   }
 

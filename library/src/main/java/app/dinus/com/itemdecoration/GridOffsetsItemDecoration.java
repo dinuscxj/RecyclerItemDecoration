@@ -31,7 +31,8 @@ public class GridOffsetsItemDecoration extends RecyclerView.ItemDecoration {
 
   @Orientation
   private int mOrientation;
-  private int mItemOffsets;
+  private int mVerticalItemOffsets;
+  private int mHorizontalItemOffsets;
 
   public GridOffsetsItemDecoration(@Orientation int orientation) {
     setOrientation(orientation);
@@ -41,8 +42,12 @@ public class GridOffsetsItemDecoration extends RecyclerView.ItemDecoration {
     this.mOrientation = orientation;
   }
 
-  public void setItemOffsets(int itemOffsets) {
-    this.mItemOffsets = itemOffsets;
+  public void setVerticalItemOffsets(int verticalItemOffsets) {
+    this.mVerticalItemOffsets = verticalItemOffsets;
+  }
+
+  public void setHorizontalItemOffsets(int horizontalItemOffsets) {
+    this.mHorizontalItemOffsets = horizontalItemOffsets;
   }
 
   @Override
@@ -64,7 +69,7 @@ public class GridOffsetsItemDecoration extends RecyclerView.ItemDecoration {
 
   private int getHorizontalOffsets(RecyclerView parent, View view) {
     if (mTypeOffsetsFactories.size() == 0) {
-      return mItemOffsets;
+      return mHorizontalItemOffsets;
     }
 
     final int adapterPosition = parent.getChildAdapterPosition(view);
@@ -80,7 +85,7 @@ public class GridOffsetsItemDecoration extends RecyclerView.ItemDecoration {
 
   private int getVerticalOffsets(RecyclerView parent, View view) {
     if (mTypeOffsetsFactories.size() == 0) {
-      return mItemOffsets;
+      return mVerticalItemOffsets;
     }
 
     final int adapterPosition = parent.getChildAdapterPosition(view);

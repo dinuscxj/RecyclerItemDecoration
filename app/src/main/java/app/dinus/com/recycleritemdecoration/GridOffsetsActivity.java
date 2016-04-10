@@ -111,7 +111,6 @@ public class GridOffsetsActivity extends SingleFragmentActivity {
         private RecyclerView.ItemDecoration createDividerItemDecoration() {
             GridDividerItemDecoration dividerItemDecoration = new GridDividerItemDecoration(getActivity(),
                     GridDividerItemDecoration.GRID_DIVIDER_HORIZONTAL);
-
             dividerItemDecoration.registerTypeDrawable(getItemViewType(ItemAnimal.class),
                     new GridDividerItemDecoration.DrawableCreator() {
                         @Override
@@ -155,10 +154,9 @@ public class GridOffsetsActivity extends SingleFragmentActivity {
         }
 
         private RecyclerView.ItemDecoration createOffsetsItemDecoration() {
-            GridOffsetsItemDecoration dividerItemDecoration = new GridOffsetsItemDecoration(
+            GridOffsetsItemDecoration offsetsItemDecoration = new GridOffsetsItemDecoration(
                     GridOffsetsItemDecoration.GRID_OFFSETS_HORIZONTAL);
-
-            dividerItemDecoration.registerTypeDrawable(getItemViewType(ItemAnimal.class),
+            offsetsItemDecoration.registerTypeDrawable(getItemViewType(ItemAnimal.class),
                     new GridOffsetsItemDecoration.OffsetsCreator() {
                         @Override
                         public int createVertical(RecyclerView parent, int adapterPosition) {
@@ -171,7 +169,7 @@ public class GridOffsetsActivity extends SingleFragmentActivity {
                         }
                     });
 
-            dividerItemDecoration.registerTypeDrawable(getItemViewType(ItemCartoon.class),
+            offsetsItemDecoration.registerTypeDrawable(getItemViewType(ItemCartoon.class),
                     new GridOffsetsItemDecoration.OffsetsCreator() {
                         @Override
                         public int createVertical(RecyclerView parent, int adapterPosition) {
@@ -184,7 +182,7 @@ public class GridOffsetsActivity extends SingleFragmentActivity {
                         }
                     });
 
-            dividerItemDecoration.registerTypeDrawable(getItemViewType(ItemScenic.class),
+            offsetsItemDecoration.registerTypeDrawable(getItemViewType(ItemScenic.class),
                     new GridOffsetsItemDecoration.OffsetsCreator() {
                         @Override
                         public int createVertical(RecyclerView parent, int adapterPosition) {
@@ -197,7 +195,7 @@ public class GridOffsetsActivity extends SingleFragmentActivity {
                         }
                     });
 
-            return dividerItemDecoration;
+            return offsetsItemDecoration;
         }
     }
 }

@@ -1,11 +1,7 @@
 package app.dinus.com.recycleritemdecoration;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -15,8 +11,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
-import app.dinus.com.itemdecoration.LinearDividerItemDecoration;
-import app.dinus.com.itemdecoration.LinearOffsetsItemDecoration;
+import java.util.ArrayList;
+import java.util.List;
+
+import app.dinus.com.itemdecoration.ShaderItemDecoration;
 import app.dinus.com.recycleritemdecoration.foundation.RecyclerListAdapter;
 import app.dinus.com.recycleritemdecoration.foundation.RecyclerListFragment;
 import app.dinus.com.recycleritemdecoration.foundation.SingleFragmentActivity;
@@ -28,22 +26,22 @@ import app.dinus.com.recycleritemdecoration.viewholder.AnimalViewHolder;
 import app.dinus.com.recycleritemdecoration.viewholder.CartoonViewHolder;
 import app.dinus.com.recycleritemdecoration.viewholder.ScenicViewHolder;
 
-public class LinearDividerActivity extends SingleFragmentActivity {
+public class ShaderActivity extends SingleFragmentActivity {
 
     public static void startActivity(Activity activity) {
-        Intent intent = new Intent(activity, LinearDividerActivity.class);
+        Intent intent = new Intent(activity, ShaderActivity.class);
         activity.startActivity(intent);
     }
 
     @Override
     protected Fragment createFragment() {
-        return LinearDividerFragment.newInstance();
+        return ShaderFragment.newInstance();
     }
 
-    public static class LinearDividerFragment extends RecyclerListFragment {
+    public static class ShaderFragment extends RecyclerListFragment {
 
-        public static LinearDividerFragment newInstance() {
-            return new LinearDividerFragment();
+        public static ShaderFragment newInstance() {
+            return new ShaderFragment();
         }
 
         @Override
@@ -88,7 +86,7 @@ public class LinearDividerActivity extends SingleFragmentActivity {
                         }
                     });
 
-                    addViewType(ItemScenic.class, new ViewHolderFactory<RecyclerListAdapter.ViewHolder>() {
+                    addViewType(ItemScenic.class, new ViewHolderFactory<ViewHolder>() {
                         @Override
                         public ViewHolder onCreateViewHolder(ViewGroup parent) {
                             return new ScenicViewHolder(parent);
@@ -105,72 +103,15 @@ public class LinearDividerActivity extends SingleFragmentActivity {
 
         @Override
         public RecyclerView.ItemDecoration onCreateItemDecoration() {
-            return createDividerItemDecoration();
-//      return createOffsetsItemDecoration();
+            return createShaderItemDecoration();
         }
 
         @NonNull
-        private RecyclerView.ItemDecoration createDividerItemDecoration() {
-            LinearDividerItemDecoration dividerItemDecoration = new LinearDividerItemDecoration(
-                    getActivity(), LinearDividerItemDecoration.LINEAR_DIVIDER_VERTICAL);
+        private RecyclerView.ItemDecoration createShaderItemDecoration() {
+            ShaderItemDecoration shaderItemDecoration = new ShaderItemDecoration(getActivity(),
+                    ShaderItemDecoration.SHADER_BOTTOM | ShaderItemDecoration.SHADER_TOP);
 
-            dividerItemDecoration.registerTypeDrawable(getItemViewType(ItemAnimal.class),
-                    new LinearDividerItemDecoration.DrawableCreator() {
-                        @Override
-                        public Drawable create(RecyclerView parent, int adapterPosition) {
-                            return getResources().getDrawable(R.drawable.bg_animal_divider);
-                        }
-                    });
-
-            dividerItemDecoration.registerTypeDrawable(getItemViewType(ItemCartoon.class),
-                    new LinearDividerItemDecoration.DrawableCreator() {
-                        @Override
-                        public Drawable create(RecyclerView parent, int adapterPosition) {
-                            return getResources().getDrawable(R.drawable.bg_cartoon_divider);
-                        }
-                    });
-
-            dividerItemDecoration.registerTypeDrawable(getItemViewType(ItemScenic.class),
-                    new LinearDividerItemDecoration.DrawableCreator() {
-                        @Override
-                        public Drawable create(RecyclerView parent, int adapterPosition) {
-                            return getResources().getDrawable(R.drawable.bg_scenic_divider);
-                        }
-                    });
-
-            return dividerItemDecoration;
-        }
-
-        @NonNull
-        private RecyclerView.ItemDecoration createOffsetsItemDecoration() {
-            LinearOffsetsItemDecoration offsetsItemDecoration = new LinearOffsetsItemDecoration(
-                    LinearOffsetsItemDecoration.LINEAR_OFFSETS_HORIZONTAL);
-
-            offsetsItemDecoration.registerTypeOffset(getItemViewType(ItemAnimal.class),
-                    new LinearOffsetsItemDecoration.OffsetsCreator() {
-                        @Override
-                        public int create(RecyclerView parent, int adapterPosition) {
-                            return 30;
-                        }
-                    });
-
-            offsetsItemDecoration.registerTypeOffset(getItemViewType(ItemCartoon.class),
-                    new LinearOffsetsItemDecoration.OffsetsCreator() {
-                        @Override
-                        public int create(RecyclerView parent, int adapterPosition) {
-                            return 60;
-                        }
-                    });
-
-            offsetsItemDecoration.registerTypeOffset(getItemViewType(ItemScenic.class),
-                    new LinearOffsetsItemDecoration.OffsetsCreator() {
-                        @Override
-                        public int create(RecyclerView parent, int adapterPosition) {
-                            return 90;
-                        }
-                    });
-
-            return offsetsItemDecoration;
+            return shaderItemDecoration;
         }
     }
 }

@@ -4,6 +4,7 @@ RecyclerViewItemDecoration is an Android library that allows developers to easil
 Besides, the library will have new ItemDecoration added constantly.
 
 ![](https://github.com/dinuscxj/RecyclerItemDecoration/blob/master/Preview/PinnedHeaderItemDecoration.gif?width=300)
+![](https://github.com/dinuscxj/RecyclerItemDecoration/blob/master/Preview/ShaderItemDecoration.gif?width=300)<br/>
 ![](https://github.com/dinuscxj/RecyclerItemDecoration/blob/master/Preview/LinearDividerItemDecoration.gif?width=300)
 ![](https://github.com/dinuscxj/RecyclerItemDecoration/blob/master/Preview/GridOffsetsItemDecoration.gif?width=300)
 
@@ -25,8 +26,31 @@ Besides, the library will have new ItemDecoration added constantly.
  );
  ```
 
+ SetShaderItemDecoration<br/>
+ ```java
+ //simple usage
+ ShaderItemDecoration shaderItemDecoration = new ShaderItemDecoration(getActivity(),
+                     ShaderItemDecoration.SHADER_BOTTOM | ShaderItemDecoration.SHADER_TOP);
+ shaderItemDecoration.setShaderTopDistance(shaderTopDistance);
+ shaderItemDecoration.setShaderBottomDistance(shaderBottomDistance);
+ //complex usage
+ ShaderItemDecoration shaderItemDecoration = new ShaderItemDecoration(getActivity(),
+                     ShaderItemDecoration.SHADER_BOTTOM | ShaderItemDecoration.SHADER_TOP);
+ shaderItemDecoration.registerBottomShaderCreator(new ShaderItemDecoration.ShaderCreator() {
+     @Override
+     public Shader createShader(RecyclerView parent) {
+         return null;
+     }
+ });
+ ```
+
  Set LinearDividerItemDecoration<br/>
  ```java
+ //simple usage
+ LinearDividerItemDecoration dividerItemDecoration = new LinearDividerItemDecoration(
+                     getActivity(), LinearDividerItemDecoration.LINEAR_DIVIDER_VERTICAL);
+ dividerItemDecoration.setDivider(divider);
+ //complex usage
  LinearDividerItemDecoration dividerItemDecoration = new LinearDividerItemDecoration(
                      getActivity(), LinearDividerItemDecoration.LINEAR_DIVIDER_VERTICAL);
  dividerItemDecoration.registerTypeDrawable(getItemViewType(ItemAnimal.class),
@@ -39,11 +63,16 @@ Besides, the library will have new ItemDecoration added constantly.
  );
  ```
 
- Set LinearDividerItemDecoration<br/>
+ Set LinearOffsetsItemDecoration<br/>
  ```java
- LinearOffsetItemDecoration dividerItemDecoration = new LinearOffsetItemDecoration(
+ //simple usage
+ LinearOffsetsItemDecoration offsetsItemDecoration = new LinearOffsetItemDecoration(
+                       LinearOffsetItemDecoration.LINEAR_OFFSETS_HORIZONTAL);
+ offsetsItemDecoration.setItemOffsets(itemOffsets);
+ //complex usage
+ LinearOffsetsItemDecoration offsetsItemDecoration = new LinearOffsetItemDecoration(
                      LinearOffsetItemDecoration.LINEAR_OFFSETS_HORIZONTAL);
- dividerItemDecoration.registerTypeOffset(getItemViewType(ItemAnimal.class),
+ offsetsItemDecoration.registerTypeOffset(getItemViewType(ItemAnimal.class),
      new LinearOffsetItemDecoration.OffsetsCreator() {
          @Override
          public int create(RecyclerView parent, int adapterPosition) {
@@ -55,6 +84,12 @@ Besides, the library will have new ItemDecoration added constantly.
 
  Set GridDividerItemDecoration<br/>
  ```java
+ //simple usage
+ GridDividerItemDecoration dividerItemDecoration = new GridDividerItemDecoration(getActivity(),
+                     GridDividerItemDecoration.GRID_DIVIDER_VERTICAL);
+ dividerItemDecoration.setVerticalDivider(verticalDivider);
+ dividerItemDecoration.setHorizontalDivider(horizontalDivider);
+ //complex usage
  GridDividerItemDecoration dividerItemDecoration = new GridDividerItemDecoration(getActivity(),
                      GridDividerItemDecoration.GRID_DIVIDER_VERTICAL);
  dividerItemDecoration.registerTypeDrawable(getItemViewType(ItemAnimal.class),
@@ -73,9 +108,15 @@ Besides, the library will have new ItemDecoration added constantly.
 
  Set GridOffsetsItemDecoration<br/>
  ```java
- GridOffsetsItemDecoration dividerItemDecoration = new GridOffsetsItemDecoration(
+ //simple usage
+ GridOffsetsItemDecoration offsetsItemDecoration = new GridOffsetsItemDecoration(
                      GridOffsetsItemDecoration.GRID_OFFSETS_HORIZONTAL);
- dividerItemDecoration.registerTypeDrawable(getItemViewType(ItemAnimal.class),
+ offsetsItemDecoration.setVerticalItemOffsets(verticalItemOffsets);
+ offsetsItemDecoration.setHorizontalItemOffsets(horizontalItemOffsets);
+ //complex usage
+ GridOffsetsItemDecoration offsetsItemDecoration = new GridOffsetsItemDecoration(
+                     GridOffsetsItemDecoration.GRID_OFFSETS_HORIZONTAL);
+ offsetsItemDecoration.registerTypeDrawable(getItemViewType(ItemAnimal.class),
      new GridOffsetsItemDecoration.OffsetsCreator() {
          @Override
          public int createVertical(RecyclerView parent, int adapterPosition) {

@@ -24,7 +24,10 @@
             android:label="@string/label_linear_divider"/>
 
         <activity android:name=".GridOffsetsActivity"
-            android:label="@string/label_grid_divider"/>
+            android:label="@string/label_offsets_divider"/>
+
+        <activity android:name=".ShaderActivity"
+            android:label="@string/label_shader"/>
 
     </application>
 

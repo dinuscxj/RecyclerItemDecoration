@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 public class PinnedHeaderDecoration extends RecyclerView.ItemDecoration {
     private int mHeaderPosition;
     private int mPinnedHeaderTop;
-    private int mCurrentItemCount;
 
     private boolean mIsAdapterDataChanged;
 
