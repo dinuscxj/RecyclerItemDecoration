@@ -9,6 +9,7 @@ Besides, the library will have new ItemDecoration added constantly.
 ![](https://github.com/dinuscxj/RecyclerItemDecoration/blob/master/Preview/GridOffsetsItemDecoration.gif?width=300)
 
 ## Features
+ * Support custom top shader or bottom shader to the RecyclerView.
  * Support the ItemView with the specific ViewType sticky on the header of the RecyclerView.
  * Support custom different Divider or Offsets , when using RecyclerView with different ViewType.
 
