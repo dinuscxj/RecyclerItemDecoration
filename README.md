@@ -31,7 +31,10 @@ Besides, the library will have new ItemDecoration added constantly.
  ```java
  //simple usage
  ShaderItemDecoration shaderItemDecoration = new ShaderItemDecoration(getActivity(),
-                     ShaderItemDecoration.SHADER_BOTTOM | ShaderItemDecoration.SHADER_TOP);
+                     ShaderItemDecoration.SHADER_BOTTOM
+                     | ShaderItemDecoration.SHADER_TOP
+                     | ShaderItemDecoration.SHADER_RIGHT
+                     | ShaderItemDecoration.SHADER_LEFT);
  shaderItemDecoration.setShaderTopDistance(shaderTopDistance);
  shaderItemDecoration.setShaderBottomDistance(shaderBottomDistance);
  //complex usage

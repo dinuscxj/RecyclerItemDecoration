@@ -109,7 +109,7 @@ public class ShaderActivity extends SingleFragmentActivity {
         @NonNull
         private RecyclerView.ItemDecoration createShaderItemDecoration() {
             ShaderItemDecoration shaderItemDecoration = new ShaderItemDecoration(getActivity(),
-                    ShaderItemDecoration.SHADER_BOTTOM | ShaderItemDecoration.SHADER_TOP);
+                    ShaderItemDecoration.SHADER_LEFT | ShaderItemDecoration.SHADER_RIGHT);
 
             return shaderItemDecoration;
         }
