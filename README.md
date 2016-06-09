@@ -14,7 +14,14 @@ Besides, the library will have new ItemDecoration added constantly.
  * Support custom different Divider or Offsets , when using RecyclerView with different ViewType.
 
 ## Usage
- Set HeaderItemDecoration<br/>
+ Add dependency
+ ```gradle
+ dependencies {
+    compile 'com.dinuscxj:recycleritemdecoration:1.0.0'
+ }
+ ```
+
+ Set HeaderItemDecoration
  ```java
  PinnedHeaderDecoration pinnedHeaderDecoration = new PinnedHeaderDecoration();
  pinnedHeaderDecoration.registerTypePinnedHeader(getItemViewType(ItemTitle.class),
@@ -27,7 +34,7 @@ Besides, the library will have new ItemDecoration added constantly.
  );
  ```
 
- SetShaderItemDecoration<br/>
+ SetShaderItemDecoration
  ```java
  //simple usage
  ShaderItemDecoration shaderItemDecoration = new ShaderItemDecoration(getActivity(),
@@ -48,7 +55,7 @@ Besides, the library will have new ItemDecoration added constantly.
  });
  ```
 
- Set LinearDividerItemDecoration<br/>
+ Set LinearDividerItemDecoration
  ```java
  //simple usage
  LinearDividerItemDecoration dividerItemDecoration = new LinearDividerItemDecoration(
@@ -67,7 +74,7 @@ Besides, the library will have new ItemDecoration added constantly.
  );
  ```
 
- Set LinearOffsetsItemDecoration<br/>
+ Set LinearOffsetsItemDecoration
  ```java
  //simple usage
  LinearOffsetsItemDecoration offsetsItemDecoration = new LinearOffsetItemDecoration(
@@ -86,7 +93,7 @@ Besides, the library will have new ItemDecoration added constantly.
  );
  ```
 
- Set GridDividerItemDecoration<br/>
+ Set GridDividerItemDecoration
  ```java
  //simple usage
  GridDividerItemDecoration dividerItemDecoration = new GridDividerItemDecoration(getActivity(),
@@ -110,7 +117,7 @@ Besides, the library will have new ItemDecoration added constantly.
  );
  ```
 
- Set GridOffsetsItemDecoration<br/>
+ Set GridOffsetsItemDecoration
  ```java
  //simple usage
  GridOffsetsItemDecoration offsetsItemDecoration = new GridOffsetsItemDecoration(
