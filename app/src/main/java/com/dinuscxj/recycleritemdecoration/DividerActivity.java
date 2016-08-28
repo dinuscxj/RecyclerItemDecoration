@@ -28,10 +28,10 @@ import com.dinuscxj.recycleritemdecoration.viewholder.AnimalViewHolder;
 import com.dinuscxj.recycleritemdecoration.viewholder.CartoonViewHolder;
 import com.dinuscxj.recycleritemdecoration.viewholder.ScenicViewHolder;
 
-public class LinearDividerActivity extends SingleFragmentActivity {
+public class DividerActivity extends SingleFragmentActivity {
 
     public static void startActivity(Activity activity) {
-        Intent intent = new Intent(activity, LinearDividerActivity.class);
+        Intent intent = new Intent(activity, DividerActivity.class);
         activity.startActivity(intent);
     }
 
@@ -106,7 +106,6 @@ public class LinearDividerActivity extends SingleFragmentActivity {
         @Override
         public RecyclerView.ItemDecoration onCreateItemDecoration() {
             return createDividerItemDecoration();
-//      return createOffsetsItemDecoration();
         }
 
         @NonNull
@@ -139,38 +138,6 @@ public class LinearDividerActivity extends SingleFragmentActivity {
                     });
 
             return dividerItemDecoration;
-        }
-
-        @NonNull
-        private RecyclerView.ItemDecoration createOffsetsItemDecoration() {
-            LinearOffsetsItemDecoration offsetsItemDecoration = new LinearOffsetsItemDecoration(
-                    LinearOffsetsItemDecoration.LINEAR_OFFSETS_HORIZONTAL);
-
-            offsetsItemDecoration.registerTypeOffset(getItemViewType(ItemAnimal.class),
-                    new LinearOffsetsItemDecoration.OffsetsCreator() {
-                        @Override
-                        public int create(RecyclerView parent, int adapterPosition) {
-                            return 30;
-                        }
-                    });
-
-            offsetsItemDecoration.registerTypeOffset(getItemViewType(ItemCartoon.class),
-                    new LinearOffsetsItemDecoration.OffsetsCreator() {
-                        @Override
-                        public int create(RecyclerView parent, int adapterPosition) {
-                            return 60;
-                        }
-                    });
-
-            offsetsItemDecoration.registerTypeOffset(getItemViewType(ItemScenic.class),
-                    new LinearOffsetsItemDecoration.OffsetsCreator() {
-                        @Override
-                        public int create(RecyclerView parent, int adapterPosition) {
-                            return 90;
-                        }
-                    });
-
-            return offsetsItemDecoration;
         }
     }
 }

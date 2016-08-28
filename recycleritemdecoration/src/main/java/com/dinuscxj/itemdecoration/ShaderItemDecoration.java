@@ -22,7 +22,8 @@ public class ShaderItemDecoration extends RecyclerView.ItemDecoration {
     public static final int SHADER_RIGHT = 0x08;
 
     @IntDef(value = {SHADER_BOTTOM, SHADER_TOP, SHADER_LEFT, SHADER_RIGHT}, flag = true)
-    private @interface ShaderType {}
+    private @interface ShaderType {
+    }
 
     @ShaderType
     private int mShaderType;
@@ -50,9 +51,9 @@ public class ShaderItemDecoration extends RecyclerView.ItemDecoration {
                 DEFAULT_SHADER_VERTICAL_DISTANCE_DP, context.getResources().getDisplayMetrics());
         mShaderBottomDistance = mShaderTopDistance;
 
-        mShaderLeftDistance   = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+        mShaderLeftDistance = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
                 DEFAULT_SHADER_HORIZONTAL_DISTANCE_DP, context.getResources().getDisplayMetrics());
-        mShaderRightDistance  = mShaderLeftDistance;
+        mShaderRightDistance = mShaderLeftDistance;
     }
 
     @Override

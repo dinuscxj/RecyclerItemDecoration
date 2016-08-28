@@ -38,10 +38,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 PinnedHeaderActivity.startActivity(MainActivity.this);
                 break;
             case R.id.linear_divider:
-                LinearDividerActivity.startActivity(MainActivity.this);
+                DividerActivity.startActivity(MainActivity.this);
                 break;
             case R.id.grid_offsets:
-                GridOffsetsActivity.startActivity(MainActivity.this);
+                OffsetsActivity.startActivity(MainActivity.this);
                 break;
         }
     }

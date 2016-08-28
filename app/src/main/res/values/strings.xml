@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">RecyclerItemDecoration</string>
-    <string name="label_linear_divider">LinearDividerActivity</string>
-    <string name="label_offsets_divider">GridOffsetsActivity</string>
+    <string name="label_divider">DividerActivity</string>
+    <string name="label_offsets">OffsetsActivity</string>
     <string name="label_pinned_header">PinnedHeaderActivity</string>
     <string name="label_shader">ShaderActivity</string>
 

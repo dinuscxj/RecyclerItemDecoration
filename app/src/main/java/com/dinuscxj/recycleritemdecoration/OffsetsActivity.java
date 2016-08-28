@@ -3,18 +3,16 @@ package com.dinuscxj.recycleritemdecoration;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.dinuscxj.itemdecoration.ShaderItemDecoration;
+import com.dinuscxj.itemdecoration.GridOffsetsItemDecoration;
+import com.dinuscxj.itemdecoration.LinearOffsetsItemDecoration;
 import com.dinuscxj.recycleritemdecoration.foundation.RecyclerListAdapter;
 import com.dinuscxj.recycleritemdecoration.foundation.RecyclerListFragment;
 import com.dinuscxj.recycleritemdecoration.foundation.SingleFragmentActivity;
@@ -22,26 +20,30 @@ import com.dinuscxj.recycleritemdecoration.model.ItemAnimal;
 import com.dinuscxj.recycleritemdecoration.model.ItemCartoon;
 import com.dinuscxj.recycleritemdecoration.model.ItemDrawable;
 import com.dinuscxj.recycleritemdecoration.model.ItemScenic;
+import com.dinuscxj.recycleritemdecoration.util.DensityUtil;
 import com.dinuscxj.recycleritemdecoration.viewholder.AnimalViewHolder;
 import com.dinuscxj.recycleritemdecoration.viewholder.CartoonViewHolder;
 import com.dinuscxj.recycleritemdecoration.viewholder.ScenicViewHolder;
 
-public class ShaderActivity extends SingleFragmentActivity {
+import java.util.ArrayList;
+import java.util.List;
+
+public class OffsetsActivity extends SingleFragmentActivity {
 
     public static void startActivity(Activity activity) {
-        Intent intent = new Intent(activity, ShaderActivity.class);
+        Intent intent = new Intent(activity, OffsetsActivity.class);
         activity.startActivity(intent);
     }
 
     @Override
     protected Fragment createFragment() {
-        return ShaderFragment.newInstance();
+        return GridDividerFragment.newInstance();
     }
 
-    public static class ShaderFragment extends RecyclerListFragment {
+    public static class GridDividerFragment extends RecyclerListFragment {
 
-        public static ShaderFragment newInstance() {
-            return new ShaderFragment();
+        public static GridDividerFragment newInstance() {
+            return new GridDividerFragment();
         }
 
         @Override
@@ -52,15 +54,15 @@ public class ShaderActivity extends SingleFragmentActivity {
 
         private List<ItemDrawable> createItemDrawableList() {
             List<ItemDrawable> itemDrawableList = new ArrayList<>();
-            // ItemAnimal
+            //ItemAnimal
             itemDrawableList.add(new ItemAnimal(R.drawable.ic_animal0, getString(R.string.animal0)));
             itemDrawableList.add(new ItemAnimal(R.drawable.ic_animal1, getString(R.string.animal1)));
             itemDrawableList.add(new ItemAnimal(R.drawable.ic_animal2, getString(R.string.animal2)));
-            // ItemCartoon
+            //ItemCartoon
             itemDrawableList.add(new ItemCartoon(R.drawable.ic_cartoon0, getString(R.string.cartoon0)));
             itemDrawableList.add(new ItemCartoon(R.drawable.ic_cartoon1, getString(R.string.cartoon1)));
             itemDrawableList.add(new ItemCartoon(R.drawable.ic_cartoon2, getString(R.string.cartoon2)));
-            // ItemScenic
+            //ItemScenic
             itemDrawableList.add(new ItemScenic(R.drawable.ic_scenic0, getString(R.string.scenic0)));
             itemDrawableList.add(new ItemScenic(R.drawable.ic_scenic1, getString(R.string.scenic1)));
             itemDrawableList.add(new ItemScenic(R.drawable.ic_scenic2, getString(R.string.scenic2)));
@@ -98,20 +100,20 @@ public class ShaderActivity extends SingleFragmentActivity {
 
         @Override
         public RecyclerView.LayoutManager onCreateLayoutManager() {
-            return new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+//            return new GridLayoutManager(getActivity(), 2, GridLayoutManager.VERTICAL, false);
+            return new LinearLayoutManager(getActivity());
         }
 
         @Override
         public RecyclerView.ItemDecoration onCreateItemDecoration() {
-            return createShaderItemDecoration();
+            return createOffsetsItemDecoration();
         }
 
-        @NonNull
-        private RecyclerView.ItemDecoration createShaderItemDecoration() {
-            ShaderItemDecoration shaderItemDecoration = new ShaderItemDecoration(getActivity(),
-                    ShaderItemDecoration.SHADER_TOP | ShaderItemDecoration.SHADER_BOTTOM);
-
-            return shaderItemDecoration;
+        private RecyclerView.ItemDecoration createOffsetsItemDecoration() {
+            LinearOffsetsItemDecoration offsetsItemDecoration = new LinearOffsetsItemDecoration(
+                    LinearOffsetsItemDecoration.LINEAR_OFFSETS_VERTICAL);
+            offsetsItemDecoration.setItemOffsets((int) DensityUtil.dip2px(getActivity(), 8));
+            return offsetsItemDecoration;
         }
     }
 }

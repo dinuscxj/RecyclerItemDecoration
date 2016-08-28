@@ -20,11 +20,11 @@
         <activity android:name="com.dinuscxj.recycleritemdecoration.PinnedHeaderActivity"
             android:label="@string/label_pinned_header"/>
 
-        <activity android:name="com.dinuscxj.recycleritemdecoration.LinearDividerActivity"
-            android:label="@string/label_linear_divider"/>
+        <activity android:name=".DividerActivity"
+            android:label="@string/label_divider"/>
 
-        <activity android:name="com.dinuscxj.recycleritemdecoration.GridOffsetsActivity"
-            android:label="@string/label_offsets_divider"/>
+        <activity android:name=".OffsetsActivity"
+            android:label="@string/label_offsets"/>
 
         <activity android:name="com.dinuscxj.recycleritemdecoration.ShaderActivity"
             android:label="@string/label_shader"/>

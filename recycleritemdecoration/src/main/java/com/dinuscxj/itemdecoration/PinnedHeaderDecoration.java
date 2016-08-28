@@ -125,7 +125,7 @@ public class PinnedHeaderDecoration extends RecyclerView.ItemDecoration {
     }
 
     private boolean isPinnedViewType(RecyclerView parent, int adapterPosition, int viewType) {
-        PinnedHeaderCreator pinnedHeaderCreator =  mTypePinnedHeaderFactories.get(viewType);
+        PinnedHeaderCreator pinnedHeaderCreator = mTypePinnedHeaderFactories.get(viewType);
 
         return pinnedHeaderCreator != null && pinnedHeaderCreator.create(parent, adapterPosition);
     }

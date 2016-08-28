@@ -8,13 +8,15 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PinnedHeaderActivity"
+        android:text="@string/label_pinned_header"
+        android:textAllCaps="false"
         android:id="@+id/pinned_header" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ShaderActivity"
+        android:text="@string/label_shader"
+        android:textAllCaps="false"
         android:layout_marginTop="50dp"
         android:id="@+id/shader" />
 
@@ -22,14 +24,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="LinearDividerActivity"
+        android:textAllCaps="false"
+        android:text="@string/label_divider"
         android:id="@+id/linear_divider" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="GridOffsetsActivity"
+        android:textAllCaps="false"
+        android:text="@string/label_offsets"
         android:id="@+id/grid_offsets" />
 
 </LinearLayout>
