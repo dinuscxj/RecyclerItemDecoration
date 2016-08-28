@@ -91,6 +91,8 @@ Besides, the library will have new ItemDecoration added constantly.
          }
      }
  );
+ offsetsItemDecoration.setOffsetEdge(true);
+ offsetsItemDecoration.setOffsetLast(true);
  ```
 
  Set GridDividerItemDecoration
@@ -139,6 +141,8 @@ Besides, the library will have new ItemDecoration added constantly.
          }
      }
  );
+ offsetsItemDecoration.setOffsetEdge(true);
+ offsetsItemDecoration.setOffsetLast(true);
  ```
 ## Learn More About RecyclerView
 * [PullZoomRecyclerView](https://github.com/dinuscxj/PullZoomRecyclerView)

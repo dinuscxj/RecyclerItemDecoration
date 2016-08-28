@@ -6,13 +6,11 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.dinuscxj.itemdecoration.GridOffsetsItemDecoration;
-import com.dinuscxj.itemdecoration.LinearOffsetsItemDecoration;
 import com.dinuscxj.recycleritemdecoration.foundation.RecyclerListAdapter;
 import com.dinuscxj.recycleritemdecoration.foundation.RecyclerListFragment;
 import com.dinuscxj.recycleritemdecoration.foundation.SingleFragmentActivity;
@@ -100,8 +98,7 @@ public class OffsetsActivity extends SingleFragmentActivity {
 
         @Override
         public RecyclerView.LayoutManager onCreateLayoutManager() {
-//            return new GridLayoutManager(getActivity(), 2, GridLayoutManager.VERTICAL, false);
-            return new LinearLayoutManager(getActivity());
+            return new GridLayoutManager(getActivity(), 2, GridLayoutManager.VERTICAL, false);
         }
 
         @Override
@@ -110,9 +107,10 @@ public class OffsetsActivity extends SingleFragmentActivity {
         }
 
         private RecyclerView.ItemDecoration createOffsetsItemDecoration() {
-            LinearOffsetsItemDecoration offsetsItemDecoration = new LinearOffsetsItemDecoration(
-                    LinearOffsetsItemDecoration.LINEAR_OFFSETS_VERTICAL);
-            offsetsItemDecoration.setItemOffsets((int) DensityUtil.dip2px(getActivity(), 8));
+            GridOffsetsItemDecoration offsetsItemDecoration = new GridOffsetsItemDecoration(
+                    GridOffsetsItemDecoration.GRID_OFFSETS_VERTICAL);
+            offsetsItemDecoration.setVerticalItemOffsets((int) DensityUtil.dip2px(getActivity(), 8));
+            offsetsItemDecoration.setHorizontalItemOffsets((int) DensityUtil.dip2px(getActivity(), 8));
             return offsetsItemDecoration;
         }
     }
